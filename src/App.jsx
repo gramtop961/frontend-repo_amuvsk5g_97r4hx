@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Gallery from './components/Gallery';
+import OrderContact from './components/OrderContact';
+import { MessageCircle } from 'lucide-react';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-white text-gray-900">
+      <Navbar />
+      <Hero />
+      <Gallery />
+      <OrderContact />
 
-export default App
+      {/* Floating WhatsApp */}
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-green-500 text-white px-4 py-3 shadow-lg hover:scale-105 transition"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageCircle size={18} /> Chat Now
+      </a>
+    </div>
+  );
+}
